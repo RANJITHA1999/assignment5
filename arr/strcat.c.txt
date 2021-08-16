@@ -1,0 +1,56 @@
+5)C program to concatenate two strings and find length of a new string.
+//using strcat function
+#include<stdio.h>
+#include<string.h>
+void main()
+{	
+	char s1[25],s2[25];
+	int l;
+	printf("Enter first string=");
+	scanf("%s",s1);
+	printf("Enter second string=");
+	scanf("%s",s2);
+	strcat(s1,s2);
+	l=strlen(s1);
+	printf("Concatenate string=%s\n",s1);
+	printf("Length of concatenate string=%d",l);
+}
+//without using strcat function
+#include <stdio.h>
+  int main()
+{
+   // Get the two Strings to be concatenated
+    char str1[100] = "hello", str2[100] = "hi";
+    int length;
+  
+    // Declare a new Strings
+    // to store the concatenated String
+    char str3[100];
+  
+    int i = 0, j = 0;
+  
+    printf("\nFirst string: %s", str1);
+    printf("\nSecond string: %s", str2);
+  
+    // Insert the first string in the new string
+    while (str1[i] != '\0') {
+        str3[j] = str1[i];
+        i++;
+        j++;
+    }
+  
+    // Insert the second string in the new string
+    i = 0;
+    while (str2[i] != '\0') {
+        str3[j] = str2[i];
+        i++;
+        j++;
+    }
+    str3[j] = '\0';//adding null character to destination string
+  
+    // Print the concatenated string
+    printf("%s\n", str3);
+   printf("%ld\n",sizeof(str3));//return total capacity of string
+ printf("%ld\n",strlen(str3));//total length of string without null character
+    return 0;
+}
